@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Spinner
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
             onPreviewClicked()
 
         }
+        val spinnerValues = arrayOf("Android Developer", "Android Engineer")
+        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValues)
+        spinner_job_title.adapter = spinnerAdapter
     }
 
     private fun onPreviewClicked() {
@@ -36,6 +40,15 @@ class MainActivity : AppCompatActivity() {
 //
 //        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
         val previewActivityIntent = Intent(this, PreviewActivity::class.java)
+        previewActivityIntent.putExtra("Contact Name", contactName)
+        previewActivityIntent.putExtra("Contact Number", contactNumber)
+        previewActivityIntent.putExtra("My Display Name", displayName)
+        previewActivityIntent.putExtra("Include Junior", includeJunior)
+        previewActivityIntent.putExtra("Job Title", jobTitle)
+        previewActivityIntent.putExtra("Immediate Start", immediateStart)
+        previewActivityIntent.putExtra("Start Date", startDate)
+
+
         startActivity(previewActivityIntent)
     }
 }
