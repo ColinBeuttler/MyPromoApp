@@ -8,36 +8,29 @@ import android.widget.CheckBox
 import android.widget.Spinner
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var contactName: TextInputEditText? = null
-    private var contactNumber: TextInputEditText? = null
-    private var displayName: TextInputEditText? = null
-    private var availableDate: TextInputEditText? = null
-    private var juniorCheckBox: CheckBox? = null
-    private var immediateStart: CheckBox? = null
-    private var jobTitleSpinner: Spinner? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        contactName = findViewById(R.id.edit_text_contact_name)
-        contactNumber = findViewById(R.id.edit_text_contact_number)
-        displayName = findViewById(R.id.edit_text_my_display_name)
-        availableDate = findViewById(R.id.edit_text_start_date)
-        juniorCheckBox = findViewById(R.id.check_box_junior)
-        immediateStart = findViewById(R.id.check_box_immediate_start)
-        jobTitleSpinner = findViewById(R.id.spinner_job_title)
-        val previewButton: Button = findViewById(R.id.preview_button)
-        previewButton.setOnClickListener {
+
+        preview_button.setOnClickListener {
             onPreviewClicked()
 
         }
     }
 
     private fun onPreviewClicked() {
-        val textString = contactName?.text.toString() + ", " + contactNumber?.text.toString()
-        Toast.makeText(this, textString, Toast.LENGTH_LONG).show()
+       val contactName = edit_text_contact_name.text.toString()
+        val contactNumebr = edit_text_contact_number.text.toString()
+        val displayName = edit_text_my_display_name.text.toString()
+        val includeJunior = check_box_junior.isChecked
+        val jobTitle = spinner_job_title.selectedItem.toString()
+        val immediateStart = check_box_immediate_start.isChecked
+        val startDate = edit_text_start_date.text.toString()
     }
 }
