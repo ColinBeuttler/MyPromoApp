@@ -1,5 +1,6 @@
 package com.colinbeuttler.mypromoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,8 +32,10 @@ class MainActivity : AppCompatActivity() {
         val jobTitle = spinner_job_title.selectedItem?.toString()
         val immediateStart = check_box_immediate_start.isChecked
         val startDate = edit_text_start_date.text.toString()
-        val testString = "Name of Contact: $contactName, Contact Phone Number: $contactNumber, My display Name: $displayName, Include Junior: $includeJunior, Job Title: $jobTitle, Start Immediately: $immediateStart, Start Date: $startDate"
-
-        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+//        val testString = "Name of Contact: $contactName, Contact Phone Number: $contactNumber, My display Name: $displayName, Include Junior: $includeJunior, Job Title: $jobTitle, Start Immediately: $immediateStart, Start Date: $startDate"
+//
+//        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+        val previewActivityIntent = Intent(this, PreviewActivity::class.java)
+        startActivity(previewActivityIntent)
     }
 }

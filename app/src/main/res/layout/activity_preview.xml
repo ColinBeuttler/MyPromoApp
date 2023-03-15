@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="48dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFF8Cb"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/text_view_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="This will be the message preview this may cover multiple lines and show the accurate dummy text"
+            android:textColor="#212121"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/send_message_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Send Message" />
+
+</LinearLayout>
